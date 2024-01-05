@@ -1,0 +1,10 @@
+version: '3.9'
+services:
+  apache:
+    image: httpd:latest
+    container_name: apache
+    volumes:
+    - /encrypted/apache/data:/usr/local/apache2/htdocs
+    ports:
+      - 9118:80
+    restart: unless-stopped
